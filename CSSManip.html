@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title> CSS Manipulation</title>
+	</head>
+	<script>
+		function changeCSS(){
+			var redVal = document.getElementById("redVal").value;
+			var greenVal = document.getElementById("greenVal").value;
+			var blueVal = document.getElementById("blueVal").value;
+			var thickness = document.getElementById("widthVal").value;
+			var redBordVal = document.getElementById("redBordVal").value;
+			var greenBordVal = document.getElementById("greenBordVal").value;
+			var blueBordVal = document.getElementById("blueBordVal").value;
+			if(redVal < 0 || redVal > 255)
+			{
+				alert("invalid red background value")
+			} 
+			else if(greenVal < 0 || greenVal > 255)
+			{
+				alert("invalid green background value")
+			} 
+			else if(blueVal < 0 || blueVal > 255)
+			{
+				alert("invalid blue background value")
+			} 
+			else{
+				document.getElementById("page").style.backgroundColor= "rgb("+redVal+","+greenVal+","+blueVal+")";
+				document.getElementById("text").style.backgroundColor= "rgb("+redVal+","+greenVal+","+blueVal+")";
+			}
+
+			if(redBordVal < 0 || redBordVal > 255)
+			{
+				alert("invalid red border value")
+			} 
+			else if(greenBordVal < 0 || greenBordVal > 255)
+			{
+				alert("invalid green border value")
+			} 
+			else if(blueBordVal < 0 || blueBordVal > 255)
+			{
+				alert("invalid blue border value")
+			} 
+			else{
+				dummyGraph.style.borderColor = "rgb("+redBordVal+","+greenBordVal+","+blueBordVal+")";
+			}
+			
+			if(thickness == "thick" || thickness == "thin"){
+				dummyGraph.style.borderWidth = thickness;
+			}
+			else{
+				alert("Invalid border type");
+			}
+		}
+	</script>
+	<body id="page">
+		<div id="dummyGraph" style="border-color: black; border-style: solid; border-width:thin;">
+		<p id="text" style="background-color: #FFFFFF;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam neque neque, tempus a risus egestas, lobortis euismod metus. Praesent aliquam at eros in egestas. Curabitur efficitur neque hendrerit, laoreet metus rhoncus, eleifend orci. Quisque sit amet enim efficitur, elementum nisl vitae, accumsan tortor. Fusce rhoncus cursus eros, euismod porta orci pellentesque sit amet. Curabitur sollicitudin elit et aliquet ornare. Duis tristique augue consectetur quam eleifend, eget imperdiet lectus vehicula. Morbi molestie tempor felis quis euismod. Suspendisse suscipit vitae ex in tristique. Etiam sed ligula in lorem laoreet laoreet. Praesent bibendum enim sed massa elementum tincidunt. Cras ultrices volutpat libero a sollicitudin. Pellentesque imperdiet, urna vitae dictum consequat, urna leo fermentum urna, eget rutrum nisl nibh ut risus. Nam vulputate erat sed ullamcorper interdum. Morbi laoreet lorem quis massa faucibus gravida.</p></div><br>
+		<h3>Background Color</h3><br>
+		<label>Red Background Color (0-255):</label>
+		<input id="redVal" type="number" value="0"></input><br>
+		<label>Green Background Color (0-255):</label>
+		<input id="greenVal" type="number" value="0"></input><br>
+		<label>Blue Background Color (0-255):</label>
+		<input id="blueVal" type="number" value="0"></input><br>
+		<h3>Border changes</h3><br>
+		<label>Border Width (thick, thin):</label>
+		<input id="widthVal" type="text"></input><br>
+		<label>Red Border Color (0-255):</label>
+		<input id="redBordVal" type="number" value="0"></input><br>
+		<label>Blue Background Color (0-255):</label>
+		<input id="blueBordVal" type="number" value="0"></input><br>
+		<label>Green Border Color (0-255):</label>
+		<input id="greenBordVal" type="number" value="0"></input><br>
+		<button onclick="changeCSS();">Change</button>
+		
